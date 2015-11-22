@@ -28,13 +28,12 @@
     (Click)
     I’m at the door cause it sends a photo
     He can approve it and then I can borrow
-
     The circuit theory homework due tomorrow
 
     Mr. Lockman, opens the door
     We don't need to worry no more
     We spent the night writing code, code, code
-    To help us get into our abode
+    To help us get in our abode
 
     (Ascending pitch) Bung, bung, bung, bung
 
