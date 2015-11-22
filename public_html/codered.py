@@ -21,6 +21,8 @@ from flask import send_file
 
 LOCKS_DATA_FILE = os.path.join(os.path.dirname(__file__),
     'data/locks.json')
+STATE_DATA_FILE = os.path.join(os.path.dirname(__file__),
+    'data/state.json')
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = 'drew_heilman'
@@ -54,8 +56,14 @@ def LockId(lock_id=None):
         flags = cv2.cv.CV_HAAR_SCALE_IMAGE
         )
     print("Found {0} faces!".format(len(faces)))
-    locks[lock_id]["faces"] = [{"x": int(face[0]), "y": int(face[1]), "w": int(face[2]), "h": int(face[3])} for face in faces]
-    print(locks[lock_id]["faces"])
+    locks[lock_id]["faces"] = len(faces)
+    print([{"x": int(face[0]), "y": int(face[1]), "w": int(face[2]), "h": int(face[3])} for face in faces])
+    image_faces = []
+    for (x, y, w, h) in faces:
+      cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+    filename = "/var/www/kirmani.io/api/codered/public_html/data/images/" + str(locks[lock_id]["time"]) + ".png"
+    cv2.imwrite(filename, image)
+    locks[lock_id]["image"] = base64.b64encode(open(filename, 'rb').read())
     _WriteLocks(locks)
     print("Added Lock with ID: %s" % lock_id)
     return jsonify(result=locks[lock_id])
@@ -111,6 +119,17 @@ def LockOpen():
   _WriteLocks(locks)
   return jsonify(result=locks["OVERRIDE"])
 
+@app.route('/lock/state', methods=['PUT', 'GET'])
+def LockState():
+  state = _LoadState()
+  if request.method == 'PUT':
+    state["open"] = request.form.get('open')
+    _WriteState(state)
+    return jsonify(result=state)
+  if request.method == 'GET':
+    return jsonify(result=state)
+  return GENERIC_ERROR_MESSAGE
+
 @app.route('/lock/close', methods=['PUT'])
 def LockClose():
   locks = _LoadLocks()
@@ -152,6 +171,19 @@ def _WriteLocks(data):
   j = json.dumps(data, indent=4)
   with open(LOCKS_DATA_FILE, 'w') as f:
     f.write(j)
+
+def _LoadState():
+  try:
+    with open(STATE_DATA_FILE, 'r+') as f:
+      return json.load(fp=f)
+  except IOError:
+    return {}
+
+def _WriteState(data):
+  j = json.dumps(data, indent=4)
+  with open(STATE_DATA_FILE, 'w') as f:
+    f.write(j)
+
 
 if __name__ == '__main__':
   port = int(os.environ.get('PORT', 33507))
