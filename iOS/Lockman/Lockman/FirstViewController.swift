@@ -32,6 +32,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(netHex: 0xe1e0dd)
         lockStatement.backgroundColor = UIColor(netHex: 0xe1e0dd)
+        
         lockButton.hidden = true
         lockImage.image = UIImage(named: "lock")
         

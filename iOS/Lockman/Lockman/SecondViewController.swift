@@ -76,7 +76,6 @@ class SecondViewController: UIViewController {
                                     self.peopleLabel.text = "You have " + json["result"]["faces"].stringValue + " friends in this photo."
                                     let image: UIImage = UIImage(data: NSData(base64EncodedString: json["result"]["image"].stringValue, options: NSDataBase64DecodingOptions())!)!
                                     self.img.image = image
-                                    
                                 }
                             case .Failure(let error):
                                 print(error)
