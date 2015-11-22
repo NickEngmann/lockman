@@ -54,7 +54,8 @@ def LockId(lock_id=None):
         flags = cv2.cv.CV_HAAR_SCALE_IMAGE
         )
     print("Found {0} faces!".format(len(faces)))
-    locks[lock_id]["faces"] = len(faces)
+    locks[lock_id]["faces"] = [{"x": int(face[0]), "y": int(face[1]), "w": int(face[2]), "h": int(face[3])} for face in faces]
+    print(locks[lock_id]["faces"])
     _WriteLocks(locks)
     print("Added Lock with ID: %s" % lock_id)
     return jsonify(result=locks[lock_id])
