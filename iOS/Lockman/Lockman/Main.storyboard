@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--First-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Lockman" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sh6-hg-4Pn">
+                                <rect key="frame" x="232" y="416" width="136" height="39"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Authenticate?">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="authenticateButtonTouchUp:" destination="9pv-A4-QxB" eventType="touchUpInside" id="GNA-gq-fRv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBR-DQ-wgL">
+                                <rect key="frame" x="258" y="485" width="85" height="38"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Lock em'">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="lockButtonTouchUp:" destination="9pv-A4-QxB" eventType="touchUpInside" id="2HL-IS-CY4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUy-3n-q7B">
+                                <rect key="frame" x="221" y="35" width="159" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="159" id="Gfu-Fe-634"/>
+                                </constraints>
+                                <state key="normal" title="Gimme Dat Dank JSON"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="hitMeWitDatJSON:" destination="9pv-A4-QxB" eventType="touchUpInside" id="9dG-Kv-tvl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQJ-Us-k8v">
+                                <rect key="frame" x="300" y="369" width="0.0" height="0.0"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vQJ-Us-k8v" secondAttribute="height" multiplier="1:1" id="qDg-4L-Xju"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Your door is locked." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                <rect key="frame" x="213" y="266" width="175" height="23"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vQJ-Us-k8v" firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" constant="130" id="2Uv-m5-dvP"/>
+                            <constraint firstItem="lBR-DQ-wgL" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="118.5" id="4u5-Ri-Bag"/>
+                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="sh6-hg-4Pn" secondAttribute="centerY" id="HSq-Gc-N6a"/>
+                            <constraint firstItem="vQJ-Us-k8v" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="-10" id="LwI-Uv-JrB"/>
+                            <constraint firstItem="dUy-3n-q7B" firstAttribute="top" secondItem="sh6-hg-4Pn" secondAttribute="top" constant="-79" id="NN3-44-EqG"/>
+                            <constraint firstItem="sh6-hg-4Pn" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="O5f-aV-mcX"/>
+                            <constraint firstItem="lBR-DQ-wgL" firstAttribute="bottom" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="234" id="PGJ-pk-vPq"/>
+                            <constraint firstItem="dUy-3n-q7B" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-250" id="QoK-ox-zjF"/>
+                            <constraint firstItem="lBR-DQ-wgL" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="204" id="RWe-a8-Mye"/>
+                            <constraint firstItem="sh6-hg-4Pn" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-121" id="Trl-qB-H1u"/>
+                            <constraint firstItem="dUy-3n-q7B" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="U8P-aQ-94w"/>
+                            <constraint firstItem="vQJ-Us-k8v" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="top" constant="39" id="WmG-cU-zIv"/>
+                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="sh6-hg-4Pn" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="203.5" id="l5V-do-sR6"/>
+                            <constraint firstItem="lBR-DQ-wgL" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="wB9-FG-QiA"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NN3-44-EqG"/>
+                                <exclude reference="HSq-Gc-N6a"/>
+                                <exclude reference="exm-UA-ej4"/>
+                                <exclude reference="WmG-cU-zIv"/>
+                                <exclude reference="4u5-Ri-Bag"/>
+                                <exclude reference="Trl-qB-H1u"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="authButton" destination="sh6-hg-4Pn" id="Y2q-xF-ErU"/>
+                        <outlet property="dankButton" destination="tsR-hK-woN" id="njs-l5-2GH"/>
+                        <outlet property="lockButton" destination="lBR-DQ-wgL" id="K79-Uq-epj"/>
+                        <outlet property="lockImage" destination="vQJ-Us-k8v" id="ynN-n3-yxX"/>
+                        <outlet property="lockStatement" destination="KQZ-1w-vlD" id="i4n-vV-1hG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="-389"/>
+        </scene>
+        <!--Second-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Lockman" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYV-Fq-J9a">
+                                <rect key="frame" x="-20" y="-20" width="640" height="640"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AYV-Fq-J9a" secondAttribute="height" multiplier="4:3" id="0ax-Zg-4r4"/>
+                                    <constraint firstAttribute="width" constant="640" id="db0-yp-wzB"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="db0-yp-wzB"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9jm-EK-uDX" appends="YES" id="WNg-Ul-oyi"/>
+                                    <outletCollection property="gestureRecognizers" destination="mFy-ew-SMN" appends="YES" id="4Qq-EW-CvA"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeY-Cc-15e">
+                                <rect key="frame" x="138" y="511" width="325" height="20"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AYV-Fq-J9a" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="5di-cp-EKx"/>
+                            <constraint firstItem="KeY-Cc-15e" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="220" id="GEl-0n-MYe"/>
+                            <constraint firstItem="KeY-Cc-15e" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Gh6-xK-XjQ"/>
+                            <constraint firstItem="AYV-Fq-J9a" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="K61-Xl-OhK"/>
+                            <constraint firstItem="AYV-Fq-J9a" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" id="fK5-Tp-BqN"/>
+                            <constraint firstItem="AYV-Fq-J9a" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="10" id="hUD-0u-zfS"/>
+                            <constraint firstItem="AYV-Fq-J9a" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="ovI-Li-XNX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="K61-Xl-OhK"/>
+                                <exclude reference="fK5-Tp-BqN"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="img" destination="AYV-Fq-J9a" id="bBm-4j-cQn"/>
+                        <outlet property="peopleLabel" destination="KeY-Cc-15e" id="pjC-9A-NAP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="9jm-EK-uDX">
+                    <connections>
+                        <action selector="approved:" destination="8rJ-Kc-sve" id="H1U-uU-NeJ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="mFy-ew-SMN">
+                    <connections>
+                        <action selector="denied:" destination="8rJ-Kc-sve" id="5mt-KD-Ph2"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+</document>
