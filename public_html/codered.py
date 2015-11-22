@@ -56,6 +56,12 @@ def LockId(lock_id=None):
     print("Found {0} faces!".format(len(faces)))
     locks[lock_id]["faces"] = [{"x": int(face[0]), "y": int(face[1]), "w": int(face[2]), "h": int(face[3])} for face in faces]
     print(locks[lock_id]["faces"])
+    image_faces = []
+    for (x, y, w, h) in faces:
+      cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+    filename = "/var/www/kirmani.io/api/codered/public_html/data/images/" + str(locks[lock_id]["time"]) + ".png"
+    cv2.imwrite(filename, image)
+    locks[lock_id]["image"] = base64.b64encode(open(filename, 'rb').read())
     _WriteLocks(locks)
     print("Added Lock with ID: %s" % lock_id)
     return jsonify(result=locks[lock_id])
