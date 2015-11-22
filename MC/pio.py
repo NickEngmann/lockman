@@ -26,6 +26,7 @@ def id_generator(size=25, chars=string.ascii_uppercase + string.ascii_lowercase 
                 return ''.join(random.choice(chars) for _ in range(size))
 def checkStatus():
 	open = False
+	r = requests.put("http://api.codered.kirmani.io/lock/state", data = {"open": open})
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(12,GPIO.OUT)
 	r = requests.get('http://api.codered.kirmani.io/lock/list')
@@ -45,12 +46,14 @@ def checkStatus():
 					if not open:
 						openLock()
 						open = True
+						r = requests.put("http://api.codered.kirmani.io/lock/state", data = {"open": open})
 				if action == "close":
 					print "CLOSING"
 					r = requests.delete(url)
 					if open:
 						closeLock()
 						open = False
+						r = requests.put("http://api.codered.kirmani.io/lock/state", data = {"open": open})
 			else:
 				status = r.json()["result"]["approved"]
 				waiting = r.json()["result"]["waiting"]
@@ -61,6 +64,7 @@ def checkStatus():
 						if not open:
 							openLock()
 							open = True
+							r = requests.put("http://api.codered.kirmani.io/lock/state", data = {"open": open})
 					if status == False:
 						print "BOO"
 						r = requests.delete(url)
