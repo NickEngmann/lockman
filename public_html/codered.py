@@ -54,8 +54,8 @@ def LockId(lock_id=None):
         flags = cv2.cv.CV_HAAR_SCALE_IMAGE
         )
     print("Found {0} faces!".format(len(faces)))
-    locks[lock_id]["faces"] = [{"x": int(face[0]), "y": int(face[1]), "w": int(face[2]), "h": int(face[3])} for face in faces]
-    print(locks[lock_id]["faces"])
+    locks[lock_id]["faces"] = len(faces)
+    print([{"x": int(face[0]), "y": int(face[1]), "w": int(face[2]), "h": int(face[3])} for face in faces])
     image_faces = []
     for (x, y, w, h) in faces:
       cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
