@@ -655,6 +655,7 @@
 				5BF5A74D1C0188090017B043 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5BF5A74E1C0188090017B043 /* Build configuration list for PBXNativeTarget "LockmanTests" */ = {
 			isa = XCConfigurationList;
@@ -663,6 +664,7 @@
 				5BF5A7501C0188090017B043 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5BF5A7511C0188090017B043 /* Build configuration list for PBXNativeTarget "LockmanUITests" */ = {
 			isa = XCConfigurationList;
@@ -671,6 +673,7 @@
 				5BF5A7531C0188090017B043 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
